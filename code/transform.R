@@ -22,6 +22,23 @@ dados_presidente_partido <- function(data_path){
     return(votos_presidente)
 }
 
+dados_presidente_agrupado <- function(data_path) {
+    votos <- dados_presidente_partido(data_path)
+    
+    votos_agrupado <- votos %>% 
+        group_by(partido, ano, turno) %>% 
+        summarise(nome = first(nome),
+                  votos = sum(votos),
+                  porcentagem = sum(porcentagem))
+    
+    return(votos_agrupado)
+}
+
+library(here)
 data_path <- here("data/votos_tidy_long.csv")
 votos <- dados_presidente_partido(data_path)
 write.csv(votos, here("data/votos_presidente_partido.csv"), row.names = FALSE)
+
+votos_agrupado <- dados_presidente_agrupado(data_path)
+write.csv(votos, here("data/votos_presidente_agrupado.csv"), row.names = FALSE)
+
