@@ -16,6 +16,7 @@ dados_presidente_partido <- function(data_path){
         group_by(ano, turno) %>% 
         mutate(total_votos = sum(votos)) %>% 
         mutate(porcentagem = round((votos/total_votos) * 100, digits = 2)) %>% 
+        ungroup() %>% 
         
         select(estado, nome, partido, coligacao, votos, porcentagem, cargo, ano, turno)
     
@@ -34,11 +35,35 @@ dados_presidente_agrupado <- function(data_path) {
     return(votos_agrupado)
 }
 
+dados_presidente_disputa_turno <- function(data_path) {
+    votos <- dados_presidente_partido(data_path) %>% 
+        mutate(nome = ifelse(grepl("Collor", nome), "Fernando Collor", nome)) %>% 
+        mutate(nome = ifelse(grepl("Lula", nome), "Luiz Inácio Lula da Silva", nome)) %>% 
+        mutate(nome = ifelse(grepl("Geraldo", nome), "Geraldo Alckmin", nome)) %>% 
+        mutate(nome = ifelse(grepl("Serra", nome), "José Serra", nome))
+
+    votos_turno <- votos %>% 
+        group_by(nome, ano, turno) %>% 
+        summarise(votos = sum(votos),
+                  porcentagem = sum(porcentagem)) %>% 
+        ungroup() %>% 
+        group_by(ano, nome) %>% 
+        mutate(n = n()) %>% 
+        filter(n > 1) %>% 
+        select(-n) %>% 
+        mutate(nome_eleicao = paste0(ano, " - ", nome)) %>% 
+        arrange(nome_eleicao)
+    
+    return(votos_turno)
+}
+
 library(here)
 data_path <- here("data/votos_tidy_long.csv")
 votos <- dados_presidente_partido(data_path)
 write.csv(votos, here("data/votos_presidente_partido.csv"), row.names = FALSE)
 
 votos_agrupado <- dados_presidente_agrupado(data_path)
-write.csv(votos, here("data/votos_presidente_agrupado.csv"), row.names = FALSE)
+write.csv(votos_agrupado, here("data/votos_presidente_agrupado.csv"), row.names = FALSE)
 
+votos_turno <- dados_presidente_disputa_turno(data_path)
+write.csv(votos_turno, here("data/votos_presidente_segundo_turno.csv"), row.names = FALSE)
