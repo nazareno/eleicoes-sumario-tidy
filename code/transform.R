@@ -11,6 +11,7 @@ dados_presidente_partido <- function(data_path){
         rowwise() %>% 
         mutate(nome = gsub(paste0("\\", partido, ".*", "|\\("), "", candidato)) %>% 
         na.omit() %>% 
+        filter(estado != "TOTAL") %>%
         select(estado, nome, partido, coligacao, votos, cargo, ano, turno)
     
     return(votos_presidente)
