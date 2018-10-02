@@ -15,7 +15,7 @@ dados_presidente_partido <- function(data_path){
         
         group_by(ano, turno) %>% 
         mutate(total_votos = sum(votos)) %>% 
-        mutate(porcentagem = (votos/total_votos) * 100) %>% 
+        mutate(porcentagem = round((votos/total_votos) * 100, digits = 2)) %>% 
         
         select(estado, nome, partido, coligacao, votos, porcentagem, cargo, ano, turno)
     
