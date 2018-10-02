@@ -51,8 +51,10 @@ dados_presidente_disputa_turno <- function(data_path) {
         mutate(n = n()) %>% 
         filter(n > 1) %>% 
         select(-n) %>% 
-        mutate(nome_eleicao = paste0(ano, " - ", nome)) %>% 
-        arrange(nome_eleicao)
+        ungroup() %>% 
+        mutate(candidato = nome) %>% 
+        mutate(nome = paste0(ano, " - ", nome)) %>% 
+        arrange(nome)
     
     return(votos_turno)
 }
