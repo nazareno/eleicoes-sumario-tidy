@@ -80,14 +80,25 @@ dados_presidente_estado_historico <- function(data_path, ano_eleicao) {
         
         group_by(estado) %>% 
         mutate(total = sum(votos)) %>% 
-        mutate(porcentagem = (votos / total) * 100) %>% 
+        mutate(porcentagem = round((votos / total) * 100, digits = 2)) %>% 
         ungroup()
+    
+    estados_nome <- (votos_estado_historico %>% distinct(estado) %>% arrange(estado))$estado
+    estados_sigla <- c("AC", "AL", "AP", "AM", "BA", "CE", "DF", "ES", "GO", "MA", "MT", "MS", "MG", "PA", "PB", "PR", "PE", "PI", "RN", "RS",
+                       "RJ", "RO", "RR", "SC", "SP", "SE", "TO")
+    
+    estados <- data.frame(estados_nome, estados_sigla)
+    
+    votos_estado_historico <- votos_estado_historico %>% 
+        left_join(estados, by = c("estado" = "estados_nome")) %>% 
+        mutate(UF = estados_sigla)
     
     return(votos_estado_historico)
 }
 
 library(here)
 data_path <- here("data/votos_tidy_long.csv")
+
 votos <- dados_presidente_partido(data_path)
 write.csv(votos, here("data/votos_presidente_partido.csv"), row.names = FALSE)
 
