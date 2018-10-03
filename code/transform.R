@@ -93,7 +93,20 @@ dados_presidente_estado_historico <- function(data_path, ano_eleicao) {
         left_join(estados, by = c("estado" = "estados_nome")) %>% 
         mutate(UF = estados_sigla)
     
-    return(votos_estado_historico)
+    votos_spread <- votos_estado_historico %>% 
+        spread(partido, porcentagem) %>% 
+        mutate(PSDB = ifelse(is.na(PSDB), 0, PSDB)) %>% 
+        mutate(PT = ifelse(is.na(PT), 0, PT)) %>% 
+        
+        group_by(estado) %>% 
+        summarise(PSDB = sum(PSDB),
+                  PT = sum(PT)) %>% 
+        mutate(diferenca = PT - PSDB)
+    
+    votos_estado_ano <- votos_estado_historico %>% 
+        left_join(votos_spread %>% select(estado, diferenca), by = ("estado"))
+    
+    return(votos_estado_ano)
 }
 
 library(here)

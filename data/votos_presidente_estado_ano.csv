@@ -1,55 +1,55 @@
-"estado","ano","turno","partido","votos","total","porcentagem","estados_sigla","UF"
-"Rondônia",2014,"Turno 2","PT",364055,806404,45.15,"RO","RO"
-"Acre",2014,"Turno 2","PT",138922,382452,36.32,"AC","AC"
-"Amazonas",2014,"Turno 2","PT",1033090,1588900,65.02,"AM","AM"
-"Roraima",2014,"Turno 2","PT",97329,236806,41.1,"RR","RR"
-"Pará",2014,"Turno 2","PT",2103829,3664299,57.41,"PA","PA"
-"Amapá",2014,"Turno 2","PT",227414,370078,61.45,"AP","AP"
-"Tocantins",2014,"Turno 2","PT",428662,720510,59.49,"TO","TO"
-"Maranhão",2014,"Turno 2","PT",2475762,3143279,78.76,"MA","MA"
-"Piauí",2014,"Turno 2","PT",1385096,1768980,78.3,"PI","PI"
-"Ceará",2014,"Turno 2","PT",3522225,4589321,76.75,"CE","CE"
-"R. G. do Norte",2014,"Turno 2","PT",1201576,1717587,69.96,"RN","RN"
-"Paraíba",2014,"Turno 2","PT",1380988,2148904,64.26,"PB","PB"
-"Pernambuco",2014,"Turno 2","PT",3438165,4897431,70.2,"PE","PE"
-"Alagoas",2014,"Turno 2","PT",941286,1515298,62.12,"AL","AL"
-"Sergipe",2014,"Turno 2","PT",772253,1152475,67.01,"SE","SE"
-"Bahia",2014,"Turno 2","PT",5059228,7211150,70.16,"BA","BA"
-"Minas Gerais",2014,"Turno 2","PT",5979422,11408243,52.41,"MG","MG"
-"Espirito Santo",2014,"Turno 2","PT",911906,1975973,46.15,"ES","ES"
-"Rio de Janeiro ",2014,"Turno 2","PT",4488183,8169271,54.94,"RJ","RJ"
-"São Paulo",2014,"Turno 2","PT",8488383,23784672,35.69,"SP","SP"
-"Paraná",2014,"Turno 2","PT",2408740,6173765,39.02,"PR","PR"
-"Santa Catarina",2014,"Turno 2","PT",1353808,3822887,35.41,"SC","SC"
-"R. G. do Sul",2014,"Turno 2","PT",2997360,6449815,46.47,"RS","RS"
-"M. G. do Sul",2014,"Turno 2","PT",590835,1353068,43.67,"MS","MS"
-"Mato Grosso",2014,"Turno 2","PT",717230,1582229,45.33,"MT","MT"
-"Goiás",2014,"Turno 2","PT",1365658,3183745,42.89,"GO","GO"
-"Distrito Federal",2014,"Turno 2","PT",580581,1523856,38.1,"DF","DF"
-"Rondônia",2014,"Turno 2","PSDB",442349,806404,54.85,"RO","RO"
-"Acre",2014,"Turno 2","PSDB",243530,382452,63.68,"AC","AC"
-"Amazonas",2014,"Turno 2","PSDB",555810,1588900,34.98,"AM","AM"
-"Roraima",2014,"Turno 2","PSDB",139477,236806,58.9,"RR","RR"
-"Pará",2014,"Turno 2","PSDB",1560470,3664299,42.59,"PA","PA"
-"Amapá",2014,"Turno 2","PSDB",142664,370078,38.55,"AP","AP"
-"Tocantins",2014,"Turno 2","PSDB",291848,720510,40.51,"TO","TO"
-"Maranhão",2014,"Turno 2","PSDB",667517,3143279,21.24,"MA","MA"
-"Piauí",2014,"Turno 2","PSDB",383884,1768980,21.7,"PI","PI"
-"Ceará",2014,"Turno 2","PSDB",1067096,4589321,23.25,"CE","CE"
-"R. G. do Norte",2014,"Turno 2","PSDB",516011,1717587,30.04,"RN","RN"
-"Paraíba",2014,"Turno 2","PSDB",767916,2148904,35.74,"PB","PB"
-"Pernambuco",2014,"Turno 2","PSDB",1459266,4897431,29.8,"PE","PE"
-"Alagoas",2014,"Turno 2","PSDB",574012,1515298,37.88,"AL","AL"
-"Sergipe",2014,"Turno 2","PSDB",380222,1152475,32.99,"SE","SE"
-"Bahia",2014,"Turno 2","PSDB",2151922,7211150,29.84,"BA","BA"
-"Minas Gerais",2014,"Turno 2","PSDB",5428821,11408243,47.59,"MG","MG"
-"Espirito Santo",2014,"Turno 2","PSDB",1064067,1975973,53.85,"ES","ES"
-"Rio de Janeiro ",2014,"Turno 2","PSDB",3681088,8169271,45.06,"RJ","RJ"
-"São Paulo",2014,"Turno 2","PSDB",15296289,23784672,64.31,"SP","SP"
-"Paraná",2014,"Turno 2","PSDB",3765025,6173765,60.98,"PR","PR"
-"Santa Catarina",2014,"Turno 2","PSDB",2469079,3822887,64.59,"SC","SC"
-"R. G. do Sul",2014,"Turno 2","PSDB",3452455,6449815,53.53,"RS","RS"
-"M. G. do Sul",2014,"Turno 2","PSDB",762233,1353068,56.33,"MS","MS"
-"Mato Grosso",2014,"Turno 2","PSDB",864999,1582229,54.67,"MT","MT"
-"Goiás",2014,"Turno 2","PSDB",1818087,3183745,57.11,"GO","GO"
-"Distrito Federal",2014,"Turno 2","PSDB",943275,1523856,61.9,"DF","DF"
+"estado","ano","turno","partido","votos","total","porcentagem","estados_sigla","UF","diferenca"
+"Rondônia",2014,"Turno 2","PT",364055,806404,45.15,"RO","RO",-9.7
+"Acre",2014,"Turno 2","PT",138922,382452,36.32,"AC","AC",-27.36
+"Amazonas",2014,"Turno 2","PT",1033090,1588900,65.02,"AM","AM",30.04
+"Roraima",2014,"Turno 2","PT",97329,236806,41.1,"RR","RR",-17.8
+"Pará",2014,"Turno 2","PT",2103829,3664299,57.41,"PA","PA",14.82
+"Amapá",2014,"Turno 2","PT",227414,370078,61.45,"AP","AP",22.9
+"Tocantins",2014,"Turno 2","PT",428662,720510,59.49,"TO","TO",18.98
+"Maranhão",2014,"Turno 2","PT",2475762,3143279,78.76,"MA","MA",57.52
+"Piauí",2014,"Turno 2","PT",1385096,1768980,78.3,"PI","PI",56.6
+"Ceará",2014,"Turno 2","PT",3522225,4589321,76.75,"CE","CE",53.5
+"R. G. do Norte",2014,"Turno 2","PT",1201576,1717587,69.96,"RN","RN",39.92
+"Paraíba",2014,"Turno 2","PT",1380988,2148904,64.26,"PB","PB",28.52
+"Pernambuco",2014,"Turno 2","PT",3438165,4897431,70.2,"PE","PE",40.4
+"Alagoas",2014,"Turno 2","PT",941286,1515298,62.12,"AL","AL",24.24
+"Sergipe",2014,"Turno 2","PT",772253,1152475,67.01,"SE","SE",34.02
+"Bahia",2014,"Turno 2","PT",5059228,7211150,70.16,"BA","BA",40.32
+"Minas Gerais",2014,"Turno 2","PT",5979422,11408243,52.41,"MG","MG",4.81999999999999
+"Espirito Santo",2014,"Turno 2","PT",911906,1975973,46.15,"ES","ES",-7.7
+"Rio de Janeiro ",2014,"Turno 2","PT",4488183,8169271,54.94,"RJ","RJ",9.88
+"São Paulo",2014,"Turno 2","PT",8488383,23784672,35.69,"SP","SP",-28.62
+"Paraná",2014,"Turno 2","PT",2408740,6173765,39.02,"PR","PR",-21.96
+"Santa Catarina",2014,"Turno 2","PT",1353808,3822887,35.41,"SC","SC",-29.18
+"R. G. do Sul",2014,"Turno 2","PT",2997360,6449815,46.47,"RS","RS",-7.06
+"M. G. do Sul",2014,"Turno 2","PT",590835,1353068,43.67,"MS","MS",-12.66
+"Mato Grosso",2014,"Turno 2","PT",717230,1582229,45.33,"MT","MT",-9.34
+"Goiás",2014,"Turno 2","PT",1365658,3183745,42.89,"GO","GO",-14.22
+"Distrito Federal",2014,"Turno 2","PT",580581,1523856,38.1,"DF","DF",-23.8
+"Rondônia",2014,"Turno 2","PSDB",442349,806404,54.85,"RO","RO",-9.7
+"Acre",2014,"Turno 2","PSDB",243530,382452,63.68,"AC","AC",-27.36
+"Amazonas",2014,"Turno 2","PSDB",555810,1588900,34.98,"AM","AM",30.04
+"Roraima",2014,"Turno 2","PSDB",139477,236806,58.9,"RR","RR",-17.8
+"Pará",2014,"Turno 2","PSDB",1560470,3664299,42.59,"PA","PA",14.82
+"Amapá",2014,"Turno 2","PSDB",142664,370078,38.55,"AP","AP",22.9
+"Tocantins",2014,"Turno 2","PSDB",291848,720510,40.51,"TO","TO",18.98
+"Maranhão",2014,"Turno 2","PSDB",667517,3143279,21.24,"MA","MA",57.52
+"Piauí",2014,"Turno 2","PSDB",383884,1768980,21.7,"PI","PI",56.6
+"Ceará",2014,"Turno 2","PSDB",1067096,4589321,23.25,"CE","CE",53.5
+"R. G. do Norte",2014,"Turno 2","PSDB",516011,1717587,30.04,"RN","RN",39.92
+"Paraíba",2014,"Turno 2","PSDB",767916,2148904,35.74,"PB","PB",28.52
+"Pernambuco",2014,"Turno 2","PSDB",1459266,4897431,29.8,"PE","PE",40.4
+"Alagoas",2014,"Turno 2","PSDB",574012,1515298,37.88,"AL","AL",24.24
+"Sergipe",2014,"Turno 2","PSDB",380222,1152475,32.99,"SE","SE",34.02
+"Bahia",2014,"Turno 2","PSDB",2151922,7211150,29.84,"BA","BA",40.32
+"Minas Gerais",2014,"Turno 2","PSDB",5428821,11408243,47.59,"MG","MG",4.81999999999999
+"Espirito Santo",2014,"Turno 2","PSDB",1064067,1975973,53.85,"ES","ES",-7.7
+"Rio de Janeiro ",2014,"Turno 2","PSDB",3681088,8169271,45.06,"RJ","RJ",9.88
+"São Paulo",2014,"Turno 2","PSDB",15296289,23784672,64.31,"SP","SP",-28.62
+"Paraná",2014,"Turno 2","PSDB",3765025,6173765,60.98,"PR","PR",-21.96
+"Santa Catarina",2014,"Turno 2","PSDB",2469079,3822887,64.59,"SC","SC",-29.18
+"R. G. do Sul",2014,"Turno 2","PSDB",3452455,6449815,53.53,"RS","RS",-7.06
+"M. G. do Sul",2014,"Turno 2","PSDB",762233,1353068,56.33,"MS","MS",-12.66
+"Mato Grosso",2014,"Turno 2","PSDB",864999,1582229,54.67,"MT","MT",-9.34
+"Goiás",2014,"Turno 2","PSDB",1818087,3183745,57.11,"GO","GO",-14.22
+"Distrito Federal",2014,"Turno 2","PSDB",943275,1523856,61.9,"DF","DF",-23.8
