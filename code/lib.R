@@ -134,9 +134,9 @@ dados_presidente_porcentagem <- function() {
     votos_presidente <- votos %>%
         group_by(ano, turno) %>% 
         mutate(total_votos = sum(votos)) %>% 
-        mutate(porcentagem = round((votos/total_votos) * 100, digits = 2)) %>% 
+        mutate(porcentagem_brasil = (votos/total_votos) * 100) %>% 
         ungroup() %>% 
-        select(estado, nome, partido, coligacao, votos, porcentagem, cargo, ano, turno)
+        select(estado, nome, partido, coligacao, votos, porcentagem_brasil, cargo, ano, turno)
     
     votos_presidente %>% 
         write_csv(here::here("data/votos_presidente_tidy.csv"))
