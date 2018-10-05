@@ -106,3 +106,38 @@ import_votos_camara <- function(){
 read_projectdata <- function(){
 
 }
+
+data_presidente_tidy <- function(data_path) {
+    library(tidyverse)
+    library(readr)
+    
+    votos <- read_csv(data_path)
+    
+    votos_presidente <- votos %>%
+        mutate(coligacao = sapply(str_extract_all(candidato, "\\b[A-Z]+\\b|PCdoB|PDCdoB|PTdoB"), paste, collapse= ' ')) %>% 
+        mutate(partido = gsub("([A-Za-z]+).*", "\\1", coligacao)) %>%
+        rowwise() %>% 
+        mutate(nome = gsub(paste0("\\", partido, ".*", "|\\("), "", candidato)) %>% 
+        na.omit() %>% 
+        filter(estado != "TOTAL")
+    
+    return(votos_presidente)
+}
+
+dados_presidente_porcentagem <- function() {
+    
+    library(here)
+    data_path <- here::here("data/votos_tidy_long.csv")
+    
+    votos <- data_presidente_tidy(data_path)
+    
+    votos_presidente <- votos %>%
+        group_by(ano, turno) %>% 
+        mutate(total_votos = sum(votos)) %>% 
+        mutate(porcentagem = round((votos/total_votos) * 100, digits = 2)) %>% 
+        ungroup() %>% 
+        select(estado, nome, partido, coligacao, votos, porcentagem, cargo, ano, turno)
+    
+    votos_presidente %>% 
+        write_csv(here::here("data/votos_presidente_tidy.csv"))
+}
