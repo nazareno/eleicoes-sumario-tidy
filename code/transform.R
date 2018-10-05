@@ -36,16 +36,37 @@ dados_presidente_agrupado <- function(data_path) {
 }
 
 dados_presidente_disputa_turno <- function(data_path) {
-    votos <- dados_presidente_partido(data_path) %>% 
+    
+    library(tidyverse)
+    library(readr)
+    
+    votos <- read_csv(data_path)
+    
+    votos_presidente <- votos %>%
+        mutate(coligacao = sapply(str_extract_all(candidato, "\\b[A-Z]+\\b|PCdoB|PDCdoB|PTdoB"), paste, collapse= ' ')) %>% 
+        mutate(partido = gsub("([A-Za-z]+).*", "\\1", coligacao)) %>%
+        rowwise() %>% 
+        mutate(nome = gsub(paste0("\\", partido, ".*", "|\\("), "", candidato)) %>% 
+        na.omit() %>% 
+        filter(estado != "TOTAL") %>%
+        
+        group_by(ano, turno) %>% 
+        mutate(total_votos = sum(votos)) %>% 
+        mutate(porcentagem = (votos/total_votos) * 100) %>% 
+        ungroup() %>% 
+        
+        select(estado, nome, partido, coligacao, votos, porcentagem, cargo, ano, turno)
+    
+    votos_alt <- votos_presidente %>% 
         mutate(nome = ifelse(grepl("Collor", nome), "Fernando Collor", nome)) %>% 
         mutate(nome = ifelse(grepl("Lula", nome), "Luiz Inácio Lula da Silva", nome)) %>% 
         mutate(nome = ifelse(grepl("Geraldo", nome), "Geraldo Alckmin", nome)) %>% 
         mutate(nome = ifelse(grepl("Serra", nome), "José Serra", nome))
 
-    votos_turno <- votos %>% 
+    votos_turno <- votos_alt %>% 
         group_by(nome, ano, turno) %>% 
         summarise(votos = sum(votos),
-                  porcentagem = sum(porcentagem)) %>% 
+                  porcentagem = round(sum(porcentagem), digits = 2)) %>% 
         ungroup() %>% 
         group_by(ano, nome) %>% 
         mutate(n = n()) %>% 
